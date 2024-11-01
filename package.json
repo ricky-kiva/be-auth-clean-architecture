@@ -4,7 +4,12 @@
   "description": "Learning implementation of Clean Architecture & TDD in Backend Development",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js",
+    "test": "jest --setupFiles dotenv/config",
+    "test:watch": "jest --watchAll --coverage --setupFiles dotenv/config",
+    "migrate": "node-pg-migrate",
+    "migrate:test": "node-pg-migrate --envPath .test.env"
   },
   "keywords": [
     "clean",
