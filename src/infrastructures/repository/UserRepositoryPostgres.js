@@ -20,7 +20,7 @@ class UserRepositoryPostgres extends UserRepository {
     const result = await this._pool.query(q);
 
     if (result.rowCount) {
-      throw new InvariantError('username not available');
+      throw new InvariantError('username is taken');
     }
   }
 
