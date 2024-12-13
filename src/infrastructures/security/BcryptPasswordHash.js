@@ -1,6 +1,7 @@
 'use strict';
 
 const PasswordHash = require('../../applications/security/PasswordHash');
+const AuthenticationError = require('../../../Commons/exceptions/AuthenticationError');
 
 class BcryptPasswordHash extends PasswordHash {
   constructor(bcrypt, saltRound = 10) {
@@ -11,6 +12,14 @@ class BcryptPasswordHash extends PasswordHash {
 
   async hash(password) {
     return this._bcrypt.hash(password, this._saltRound);
+  }
+
+  async compare(password, hashedPassword) {
+    const result = await this._bcrypt.compare(password, hashedPassword);
+
+    if (!result) {
+      throw new AuthenticationError('kredensial yang Anda masukkan salah');
+    }
   }
 }
 
