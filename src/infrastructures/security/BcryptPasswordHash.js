@@ -1,7 +1,7 @@
 'use strict';
 
 const PasswordHash = require('../../applications/security/PasswordHash');
-const AuthenticationError = require('../../../Commons/exceptions/AuthenticationError');
+const AuthenticationError = require('../../commons/exceptions/AuthenticationError');
 
 class BcryptPasswordHash extends PasswordHash {
   constructor(bcrypt, saltRound = 10) {

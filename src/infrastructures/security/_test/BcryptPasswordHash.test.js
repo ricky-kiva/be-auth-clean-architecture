@@ -2,7 +2,7 @@
 
 const bcrypt = require('bcrypt');
 const BcryptPasswordHash = require('../BcryptPasswordHash');
-const AuthenticationError = require('../../../Commons/exceptions/AuthenticationError');
+const AuthenticationError = require('../../../commons/exceptions/AuthenticationError');
 
 describe('BcryptPasswordHash', () => {
   describe('hash function', () => {

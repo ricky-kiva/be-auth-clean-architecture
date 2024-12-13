@@ -1,9 +1,9 @@
 'use strict';
 
 const Jwt = require('@hapi/jwt');
-const InvariantError = require('../../../Commons/exceptions/InvariantError');
+const InvariantError = require('../../../commons/exceptions/InvariantError');
 const JwtTokenManager = require('../JwtTokenManager');
-const config = require('../../../Commons/config');
+const config = require('../../../commons/config');
 
 describe('JwtTokenManager', () => {
   describe('createAccessToken function', () => {
