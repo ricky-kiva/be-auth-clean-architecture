@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 'use strict';
 
 const dotenv = require('dotenv');
@@ -27,6 +29,12 @@ const config = {
     user: process.env.PGUSER,
     password: process.env.PGPASSWORD,
     database: process.env.PGDATABASE
+  },
+  auth: {
+    jwtStrategy: 'auth-api',
+    accessTokenKey: process.env.ACCESS_TOKEN_KEY,
+    refreshTokenKey: process.env.REFRESH_TOKEN_KEY,
+    accessTokenAge: process.env.ACCESS_TOKEN_AGE
   }
 };
 
