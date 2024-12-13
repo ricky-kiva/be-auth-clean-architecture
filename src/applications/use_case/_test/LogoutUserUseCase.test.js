@@ -1,6 +1,6 @@
 'use strict';
 
-const AuthenticationRepository = require('../../../Domains/authentications/AuthenticationRepository');
+const AuthenticationRepository = require('../../../domains/authentications/AuthenticationRepository');
 const LogoutUserUseCase = require('../LogoutUserUseCase');
 
 describe('LogoutUserUseCase', () => {

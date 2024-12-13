@@ -1,7 +1,7 @@
 'use strict';
 
-const UserRepository = require('../../../Domains/users/UserRepository');
-const AuthenticationRepository = require('../../../Domains/authentications/AuthenticationRepository');
+const UserRepository = require('../../../domains/users/UserRepository');
+const AuthenticationRepository = require('../../../domains/authentications/AuthenticationRepository');
 const AuthenticationTokenManager = require('../../security/AuthenticationTokenManager');
 const PasswordHash = require('../../security/PasswordHash');
 const LoginUserUseCase = require('../LoginUserUseCase');

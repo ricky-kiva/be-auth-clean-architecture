@@ -1,8 +1,8 @@
 'use strict';
 
-const AuthenticationTokenManager = require('../../Applications/security/AuthenticationTokenManager');
-const config = require('../../Commons/config');
-const InvariantError = require('../../Commons/exceptions/InvariantError');
+const AuthenticationTokenManager = require('../../applications/security/AuthenticationTokenManager');
+const config = require('../../commons/config');
+const InvariantError = require('../../commons/exceptions/InvariantError');
 
 class JwtTokenManager extends AuthenticationTokenManager {
   constructor(jwt) {
