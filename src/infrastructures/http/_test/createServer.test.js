@@ -69,7 +69,7 @@ describe('HTTP server', () => {
 
       expect(res.statusCode).toEqual(400);
       expect(resJson.status).toEqual('fail');
-      expect(resJson.message).toEqual('unable to create new user. missing property');
+      expect(resJson.message).toEqual('tidak dapat membuat user baru karena properti yang dibutuhkan tidak ada');
     });
 
     it('should response 400 when payload does not meet data type spec.', async () => {
@@ -91,7 +91,7 @@ describe('HTTP server', () => {
 
       expect(res.statusCode).toEqual(400);
       expect(resJson.status).toEqual('fail');
-      expect(resJson.message).toEqual('unable to create new user. wrong property data type');
+      expect(resJson.message).toEqual('tidak dapat membuat user baru karena tipe data tidak sesuai');
     });
 
     it('should response 400 when username > 30 char.', async () => {
@@ -113,7 +113,7 @@ describe('HTTP server', () => {
 
       expect(res.statusCode).toEqual(400);
       expect(resJson.status).toEqual('fail');
-      expect(resJson.message).toEqual('unable to create new user. username character exceeding limit');
+      expect(resJson.message).toEqual('tidak dapat membuat user baru karena karakter username melebihi batas limit');
     });
 
     it('should response 400 when username contains restricted character', async () => {
@@ -135,7 +135,7 @@ describe('HTTP server', () => {
 
       expect(res.statusCode).toEqual(400);
       expect(resJson.status).toEqual('fail');
-      expect(resJson.message).toEqual('unable to create new user. username contains restricted characters');
+      expect(resJson.message).toEqual('tidak dapat membuat user baru karena username mengandung karakter terlarang');
     });
 
     it('should response 400 when username is unavailable', async () => {
@@ -403,6 +403,6 @@ describe('HTTP server', () => {
     const responseJson = JSON.parse(response.payload);
     expect(response.statusCode).toEqual(500);
     expect(responseJson.status).toEqual('error');
-    expect(responseJson.message).toEqual('terjadi kegagalan pada server kami');
+    expect(responseJson.message).toEqual('internal server error');
   });
 });
