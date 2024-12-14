@@ -2,3 +2,5 @@ node_modules
 coverage
 .env
 .test.env
+dcd-auth-ec2-kp.pem
+package-lock.json
