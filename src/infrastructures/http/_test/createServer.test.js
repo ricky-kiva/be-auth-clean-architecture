@@ -28,6 +28,22 @@ describe('HTTP server', () => {
     expect(res.statusCode).toEqual(404);
   });
 
+  describe('when GET /', () => {
+    it('should return 200 and Hello world!', async () => {
+      const server = await createServer({});
+
+      const res = await server.inject({
+        method: 'GET',
+        url: '/'
+      });
+
+      const resJson = JSON.parse(res.payload);
+
+      expect(res.statusCode).toEqual(200);
+      expect(resJson.value).toEqual('Hello world!');
+    });
+  });
+
   describe('when POST /users', () => {
     it('should response 201 & persisted user', async () => {
       const reqPayload = {

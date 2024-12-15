@@ -27,7 +27,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
         ports:
-          - 5432: 5432
+          - 5432:5432
 
     steps:
     - uses: actions/checkout@v2
@@ -45,7 +45,7 @@ jobs:
         HOST: ${{ secrets.HOST }}
         PORT: ${{ secrets.PORT }}
         PGHOST: ${{ secrets.PGHOST }}
-        PGPORT: ${{ secrets.PGPORT }}
+        PGPORT: 5432
         PGUSER: ${{ secrets.PGUSER }}
         PGPASSWORD: ${{ secrets.PGPASSWORD }}
         PGDATABASE: ${{ secrets.PGDATABASE }}
