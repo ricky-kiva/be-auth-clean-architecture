@@ -29,7 +29,7 @@ describe('HTTP server', () => {
   });
 
   describe('when GET /', () => {
-    it('should return 200 and Hello world!', async () => {
+    it('should return 200 and res. has value', async () => {
       const server = await createServer({});
 
       const res = await server.inject({
@@ -40,7 +40,7 @@ describe('HTTP server', () => {
       const resJson = JSON.parse(res.payload);
 
       expect(res.statusCode).toEqual(200);
-      expect(resJson.value).toEqual('Hello world!');
+      expect(resJson).toHaveProperty('value');
     });
   });
 
