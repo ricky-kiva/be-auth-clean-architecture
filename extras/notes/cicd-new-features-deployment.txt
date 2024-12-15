@@ -1,0 +1,12 @@
+To develop new features after CI/CD implemented:
+1. Checkout to local main branch
+2. Update (Pull) local main branch, from remote repository
+- (Pull is Fetch & Merge)
+3. Create new local branch according to main branch
+4. Develop the new feature in the new local branch
+5. Push the new local branch to remote repository
+6. Create Pull Request (PR)
+7. CI Actions will do its job
+8. After CI is successful, review will be done
+9. After review is done, do Merge Pull Request (Merge PR)
+10. Deployment by CD will be done automatically
