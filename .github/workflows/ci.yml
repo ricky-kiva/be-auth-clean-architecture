@@ -27,7 +27,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
         ports:
-          - ${{ secrets.PGPORT }}:${{ secrets.PGPORT }}
+          - 5432:5432
 
     steps:
     - uses: actions/checkout@v2
@@ -51,4 +51,4 @@ jobs:
         PGDATABASE: ${{ secrets.PGDATABASE }}
         ACCESS_TOKEN_KEY: ${{ secrets.ACCESS_TOKEN_KEY }}
         REFRESH_TOKEN_KEY: ${{ secrets.REFRESH_TOKEN_KEY }}
-        ACCESS_TOKEN_AGE: ${{ secrets.REFRESH_TOKEN_KEY }}
+        ACCESS_TOKEN_AGE: ${{ secrets.ACCESS_TOKEN_AGE }}
