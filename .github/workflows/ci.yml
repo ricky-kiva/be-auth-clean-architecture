@@ -17,9 +17,9 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: mysecretpassword
-          POSTGRES_DB: dcd_be_auth_test
+          POSTGRES_USER: ${{ secrets.PGUSER }} # use 'vars' instead of 'secrets' to access repo. environment variables
+          POSTGRES_PASSWORD: ${{ secrets.PGPASSWORD }}
+          POSTGRES_DB: ${{ secrets.PGDATABASE }}
 
         options: >-
           --health-cmd pg_isready
@@ -27,7 +27,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
         ports:
-          - 5432:5432
+          - ${{ secrets.PGPORT }}:${{ secrets.PGPORT }}
 
     steps:
     - uses: actions/checkout@v2
@@ -42,13 +42,13 @@ jobs:
         npm run test
       env:
         CI: true
-        HOST: localhost
-        PORT: 3000
-        PGHOST: localhost
-        PGPORT: 5432
-        PGUSER: postgres
-        PGPASSWORD: mysecretpassword
-        PGDATABASE: dcd_be_auth_test
-        ACCESS_TOKEN_KEY: secret
-        REFRESH_TOKEN_KEY: terces
-        ACCESS_TOKEN_AGE: 3600
+        HOST: ${{ secrets.HOST }}
+        PORT: ${{ secrets.PORT }}
+        PGHOST: ${{ secrets.PGHOST }}
+        PGPORT: ${{ secrets.PGPORT }}
+        PGUSER: ${{ secrets.PGUSER }}
+        PGPASSWORD: ${{ secrets.PGPASSWORD }}
+        PGDATABASE: ${{ secrets.PGDATABASE }}
+        ACCESS_TOKEN_KEY: ${{ secrets.ACCESS_TOKEN_KEY }}
+        REFRESH_TOKEN_KEY: ${{ secrets.REFRESH_TOKEN_KEY }}
+        ACCESS_TOKEN_AGE: ${{ secrets.REFRESH_TOKEN_KEY }}
